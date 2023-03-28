@@ -1,5 +1,11 @@
+//In this code, we use the fetch() function to make a request to the API.
+// We then chain two then() methods to the promise returned by fetch(). 
+//The first then() method converts the response to JSON format, and the second then() method calls the renderBooks() function and passes in the JSON data as an argument.
+
 function fetchBooks() {
-  // To pass the tests, don't forget to return your fetch!
+  return fetch('https://anapioficeandfire.com/api/books')
+  .then (response => response.json())
+  .then(data => renderBooks(data));
   
 }
 
